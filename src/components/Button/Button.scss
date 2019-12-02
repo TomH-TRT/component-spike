@@ -1,0 +1,47 @@
+$font-stack: Poppins, sans-serif;
+$font-sizes: (
+  null: 18px,
+  480px: 16px,
+  640px: 18px,
+  1024px: 18px
+);
+$light: #ffffff;
+$primary-color: #051c48;
+$hover: #20538a;
+$pressed: #051c48;
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    } @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+@mixin rounded($radius: 0.2em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  text-align: center;
+  padding: .5em 2em .55em;
+  font: 100% $font-stack;
+  color: $light;
+  background-color: $primary-color;
+  &:hover {
+    background-color: $hover;
+  }
+  &:active {
+    background-color: $pressed;
+  }
+  @include font-size($font-sizes);
+  @include rounded();
+}
