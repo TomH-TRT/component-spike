@@ -3,17 +3,18 @@ import "./App.scss";
 import Button from "./components/Button/index";
 
 function App() {
-  return (
+  
+return (
     <div className="App">
       <body>
         <br />
-        <Button name="Example" />
+        <Button type="button" name="User with agreement" link="http://www.example.com"/>
         <br />
         <br />
-        <Button name="Really long string of text for the button " />
+        <Button type="button" name="User without agreement" link="http://www.google.com"/>
         <br />
         <br />
-        <Button name="Submit" />
+        <Button type="button" name="Example button" />
         <br />
       </body>
     </div>

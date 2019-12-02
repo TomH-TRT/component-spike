@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState , useEffect}  from "react";
 import "./Button.scss";
 
 function Button(props) {
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    if (clicked) {
+      window.location.assign(props.link);
+    }
+  });
+
   return (
-    <button type="button" name={props.name} {...props}>
+    <button name={props.name} onClick={() => setClicked(true)}  {...props}>
       {props.name}
     </button>
   );
