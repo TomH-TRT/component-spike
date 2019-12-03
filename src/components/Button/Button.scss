@@ -1,5 +1,5 @@
-@import '../../assets/sass/mixin.scss';
-@import '../../assets//sass/global.scss';
+@import "../../assets/sass/mixin.scss";
+@import "../../assets//sass/global.scss";
 
 button {
   display: inline-block;
@@ -15,6 +15,15 @@ button {
   &:active {
     background-color: $pressed;
   }
-  @include font-size($font-sizes);
+  &:disabled {
+    background-color: $disabled;
+  }
+  opacity: 1;
+  &:disabled {
+    opacity: 0.5;
+  }
+  margin-top: 14px;
+  border: none;
+  @include font-size($text-sizes);
   @include rounded();
 }

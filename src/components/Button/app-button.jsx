@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Button.scss";
+import "./button.scss";
 
 export default function Button(props) {
   const [clicked, setClicked] = useState(false);
